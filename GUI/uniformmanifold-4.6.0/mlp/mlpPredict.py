@@ -47,4 +47,3 @@ csv_predictions = csv_predictions.replace('~', str(Path.home()))
 mlp_predict(csv_in, model, csv_out, csv_predictions)
 sys.exit(0)
 
-#my toekn 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
