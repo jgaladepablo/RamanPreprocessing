@@ -1,0 +1,13 @@
+function ok=Is2025aOrGreater
+v=version;
+if str2double(v(1:2))>=25
+    msgbox({['You are using MATLAB version ' v], '', ...
+        'Sadly, MathWorks withdrew support for JAVA Swing access to figures in this version.',...
+        '', ['Thus to run this software please use any ', ...
+         'MATLAB version from 2019a to 2024b !'], '', ...
+        }, 'UNUSABLE MATLAB version!', 'Error', 'error');
+    ok=true;
+else
+    ok=false;
+end
+end

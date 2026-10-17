@@ -1,0 +1,19 @@
+function PlotPCAVariance(ax,PCAResults,VarianceLimit)
+cla(ax)
+hold(ax,'on')
+bar(ax,...
+    PCAResults.explained,...
+    'b')
+hold(ax,'on')
+plot(ax,...
+    PCAResults.CumulativeExplained,...
+    'r','LineWidth',2)
+hold(ax,'off')
+xlabel(ax,'Principal Component')
+ylabel(ax,'Variance Explained (%)')
+legend(ax,...
+    {'Individual','Cumulative'},...
+    'Location','best')
+Coeff95=find(PCAResults.CumulativeExplained>VarianceLimit,1);
+xlim(ax,[1,Coeff95+3])
+end
